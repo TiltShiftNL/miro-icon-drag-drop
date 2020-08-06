@@ -100,8 +100,8 @@
 	}
 
 	function addImages(icon_container, logo_container) {
-		icon_container.innerHTML += images.map(i => getImage(i)).join('')
-		logo_container.innerHTML += images.map(i => getImage(i)).join('')
+		icon_container.innerHTML += images.filter(i => i.type == 'icon').map(i => getImage(i)).join('')
+		logo_container.innerHTML += images.filter(i => i.type == 'logo').map(i => getImage(i)).join('')
 	}
 
 	function createImage(canvasX, canvasY, url) {

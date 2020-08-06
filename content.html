@@ -60,8 +60,13 @@
 
 </style>
 <body>
-<div id="container">
+
+<div id="logo_container">
 </div>
+
+<div id="icon_container">
+</div>
+
 <script>
 
 	const images = [
@@ -80,8 +85,9 @@
 			'<div class="shape draggable-item red" data-color="f24726">Another Shape</div>'
 	}
 
-	function addImages(container) {
+	function addImages(container, logo_container) {
 		container.innerHTML += images.map(i => getImage(i)).join('')
+		logo_container.innerHTML += images.map(i => getImage(i)).join('')
 	}
 
 	function createImage(canvasX, canvasY, url) {
@@ -109,9 +115,10 @@
 	}
 
 	function bootstrap() {
-		const container = document.getElementById('container')
-		addShapes(container)
-		addImages(container)
+		const container = document.getElementById('icon_container')
+		const logo_container = document.getElementById('logo_container')
+		// addShapes(container)
+		addImages(container, logo_container)
 
         let currentImageUrl
 		const imageOptions = {

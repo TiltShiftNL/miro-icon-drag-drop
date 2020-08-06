@@ -13,7 +13,6 @@ app.get('/content.html', function (req, res, next) {
         if (err) {
             throw err;
         }
-        console.log(files)
         // files object contains all files names
         // log them on console
         files.forEach(file => {

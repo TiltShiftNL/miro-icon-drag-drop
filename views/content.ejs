@@ -56,12 +56,47 @@
           cursor: pointer;
       }
   
+      .container {
+        display: none;
+      }
+  
+      :target {
+        display: block;
+      }
+  
+     .nav{
+       height: 40px;
+     }
+  
+     a:link {
+        text-decoration: none;
+    }
+  
+     #icon_link{
+       float: left;
+     }
+  
+     #nav_link{
+       float: right;
+     }
+  
   </style>
 </head>
+
+
 <body>
-<div id="container">
-  
+
+<nav class="nav">
+	<a id='icon_link' href="#icon_container">iconen</a>
+	<a id='logo_link' href="#logo_container">logo elementen</a>
+</nav>
+
+<div id="logo_container" class="container">
 </div>
+
+<div id="icon_container" class="container">
+</div>
+
 <script>
 
 	const images = [
@@ -80,8 +115,9 @@
 			'<div class="shape draggable-item red" data-color="f24726">Another Shape</div>'
 	}
 
-	function addImages(container) {
-		container.innerHTML += images.map(i => getImage(i)).join('')
+	function addImages(icon_container, logo_container) {
+		icon_container.innerHTML += images.filter(i => i.type == 'icon').map(i => getImage(i)).join('')
+		logo_container.innerHTML += images.filter(i => i.type == 'logo').map(i => getImage(i)).join('')
 	}
 
 	function createImage(canvasX, canvasY, url) {
@@ -109,9 +145,10 @@
 	}
 
 	function bootstrap() {
-		const container = document.getElementById('container')
-		addShapes(container)
-		addImages(container)
+		const icon_container = document.getElementById('icon_container')
+		const logo_container = document.getElementById('logo_container')
+		// addShapes(container)
+		addImages(icon_container, logo_container)
 
         let currentImageUrl
 		const imageOptions = {
@@ -135,7 +172,8 @@
 				createImage(canvasX, canvasY, currentImageUrl)
 			}
 		}
-		miro.board.ui.initDraggableItemsContainer(container, imageOptions)
+		miro.board.ui.initDraggableItemsContainer(icon_container, imageOptions)
+		miro.board.ui.initDraggableItemsContainer(logo_container, imageOptions)
 
 		let currentShapeColor
 		let currentShapeText
@@ -160,7 +198,10 @@
 				createShape(canvasX, canvasY, currentShapeColor, currentShapeText)
 			}
 		}
-		miro.board.ui.initDraggableItemsContainer(container, shapeOptions)
+		miro.board.ui.initDraggableItemsContainer(icon_container, shapeOptions)
+		miro.board.ui.initDraggableItemsContainer(logo_container, shapeOptions)
+
+		document.getElementById('icon_link').click()
 	}
 
 	miro.onReady(bootstrap)

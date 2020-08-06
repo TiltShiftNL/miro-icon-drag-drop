@@ -4,10 +4,10 @@ function run() {
 	miro.initialize({
 		extensionPoints: {
 			bottomBar: {
-				title: 'Dropper',
+				title: 'TiltShift Icons',
 				svgIcon: icon24,
 				onClick: () => {
-					miro.board.ui.openLibrary('content.html', {title: 'Dropper'})
+					miro.board.ui.openLibrary('content.html', {title: 'TiltShift Icons'})
 				}
 			},
 			getWidgetMenuItems: (widgets) => {

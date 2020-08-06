@@ -71,8 +71,8 @@
 <body>
 
 <nav>
-	<a href="#logo_container">logo elementen</a>
-	<a href="#icon_container">iconen</a>
+	<a id='icon_link' href="#icon_container">iconen</a>
+	<a id='logo_link' href="#logo_container">logo elementen</a>
 </nav>
 
 <div id="logo_container" class="container">
@@ -184,6 +184,8 @@
 		}
 		miro.board.ui.initDraggableItemsContainer(icon_container, shapeOptions)
 		miro.board.ui.initDraggableItemsContainer(logo_container, shapeOptions)
+
+		document.getElementById('icon_link').click()
 	}
 
 	miro.onReady(bootstrap)

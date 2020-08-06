@@ -12,9 +12,7 @@ html, body {
     flex-wrap: wrap;
     flex-direction: row;
     align-items: center;
-    padding-top: 32px;
     box-sizing: border-box;
-    justify-content: space-between;
 }
 
 .row {

@@ -56,7 +56,7 @@ html, body {
 }
 
 :target {
-  display: block;
+  display: flex;
 }
 
 .nav{

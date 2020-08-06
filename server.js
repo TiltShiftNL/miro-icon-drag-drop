@@ -32,6 +32,6 @@ app.get('/content.html', function (req, res, next) {
 // Serve everything else as static
 app.use('/', express.static('.'))
 
-app.listen(8080, function () {
+app.listen(80, function () {
   console.log('CORS-enabled web server listening on port 80')
 })

@@ -58,11 +58,12 @@ html, body {
 :target {
   display: flex;
   justify-content: space-around;
-  max-height: 100vh;
+  max-height: calc(100vh - 32px);
 }
 
 .nav{
-  padding: 10px;
+  padding: 0 10px 5px 10px;
+  height: 32px;
   display: flex;
   align-items: center;
   background-color: #ececec;

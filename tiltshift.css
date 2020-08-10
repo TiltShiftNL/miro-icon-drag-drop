@@ -1,20 +1,17 @@
 html, body {
-    height: 100%;
     margin: 0;
-    padding: 0;
     font-family: Arial, Helvetica, sans-serif;
-}
+    display: flex;
+    flex-direction: column;
 }
 
-#container {
-    height: 100%;
+.container {
     overflow-y: auto;
     overflow-x: hidden;
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
     align-items: center;
-    padding-top: 32px;
     box-sizing: border-box;
 }
 
@@ -26,8 +23,9 @@ html, body {
 }
 
 .draggable-item {
-    margin-left: 32px;
-    margin-bottom: 32px;
+    border: 1px dashed #ccc;
+    border-radius: 10px;
+    margin-bottom: 24px;
     width: 112px;
     height: 112px;
     display: flex;
@@ -57,11 +55,14 @@ html, body {
 }
 
 :target {
-  display: block;
+  display: flex;
+  justify-content: space-around;
+  max-height: calc(100vh - 32px);
 }
 
 .nav{
-  padding: 10px;
+  padding: 0 10px 5px 10px;
+  height: 32px;
   display: flex;
   align-items: center;
   background-color: #ececec;
